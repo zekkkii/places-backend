@@ -1,11 +1,14 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
 
 import { configuration } from './config/config';
 import { DatabaseConfig } from './config/database.config';
+import { PostModule } from './post/post.module';
 
 import { TestModule } from './test/test.module';
+import { UserModule } from './user/user.module';
 const ENV = process.env.NODE_ENV;
 @Module({
   imports: [
@@ -18,7 +21,10 @@ const ENV = process.env.NODE_ENV;
       imports: [ConfigModule],
       useClass: DatabaseConfig,
     }),
-    TestModule,
+    // TestModule,
+    PostModule,
+    UserModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],
