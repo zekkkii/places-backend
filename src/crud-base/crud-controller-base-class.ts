@@ -7,12 +7,14 @@ import {
   Delete,
   Controller,
 } from '@nestjs/common';
+import { Repository } from 'typeorm';
 import { BaseEntity } from './baseEntity/BaseEntity';
 import { CrudBaseService } from './crud-service-base-class';
 
-@Controller('test')
-export class CrudBaseController<E extends BaseEntity> {
-  constructor(public readonly service: CrudBaseService<E>) {}
+// @Controller('asdf')
+export abstract class CrudBaseController<E extends BaseEntity> {
+  // constructor(public readonly service: CrudBaseService<E>) {}
+  protected abstract readonly service: CrudBaseService<E>;
 
   @Post('create')
   async create(@Body() dto: E) {

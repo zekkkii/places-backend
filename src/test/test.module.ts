@@ -8,7 +8,7 @@ import { CrudBaseService } from 'src/crud-base/crud-service-base-class';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Test])],
-  controllers: [TestController, CrudBaseController],
+  controllers: [TestController],
   providers: [CrudBaseService, TestService],
 })
 export class TestModule {}

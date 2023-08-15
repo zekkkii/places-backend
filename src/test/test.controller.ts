@@ -19,6 +19,6 @@ import { CrudBaseService } from 'src/crud-base/crud-service-base-class';
 @Controller('test')
 export class TestController extends CrudBaseController<Test> {
   constructor(public service: CrudBaseService<Test>) {
-    super(service);
+    super();
   }
 }
