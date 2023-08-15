@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
+import { CommentModule } from './comments/comment.module';
 
 import { configuration } from './config/config';
 import { DatabaseConfig } from './config/database.config';
@@ -25,6 +26,7 @@ const ENV = process.env.NODE_ENV;
     PostModule,
     UserModule,
     AuthModule,
+    CommentModule,
   ],
   controllers: [],
   providers: [],

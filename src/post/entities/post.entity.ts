@@ -1,10 +1,11 @@
-import { userInfo } from 'os';
+import { Comment } from 'src/comments/entities/comment.entity';
 import { User } from 'src/user/entities/user.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -19,6 +20,9 @@ export class Post {
 
   @ManyToOne(() => User, (user) => user.id)
   realatedUser: number;
+
+  @OneToMany(() => Comment, (comment) => comment.id)
+  comments: Comment[];
 
   @Column({ name: 'description' })
   description: string;
