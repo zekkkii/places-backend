@@ -10,5 +10,6 @@ export const configuration = () => ({
     synchronize: true,
     logging: false,
     autoLoadEntities: true,
+    ssl: true,
   },
 });
