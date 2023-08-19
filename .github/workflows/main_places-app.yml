@@ -21,6 +21,12 @@ jobs:
         with:
           node-version: '16.x'
 
+      - name: Caching node modules
+        uses: actions/cache@v2
+        with:
+          path: 'app/node_modules'
+          key: node-modules-${{ hashFiles('app/package.json') }}
+
       - name: npm install, build, and test
         run: |
           npm install
