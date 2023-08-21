@@ -3,12 +3,12 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { CommentModule } from './comments/comment.module';
-
 import { configuration } from './config/config';
 import { DatabaseConfig } from './config/database.config';
 import { PostModule } from './post/post.module';
+import { ProfileModule } from './Profile/profile.module';
 
-import { TestModule } from './test/test.module';
+// import { TestModule } from './test/test.module';
 import { UserModule } from './user/user.module';
 const ENV = process.env.NODE_ENV;
 @Module({
@@ -27,6 +27,7 @@ const ENV = process.env.NODE_ENV;
     UserModule,
     AuthModule,
     CommentModule,
+    ProfileModule,
   ],
   controllers: [],
   providers: [],
