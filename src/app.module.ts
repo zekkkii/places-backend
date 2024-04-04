@@ -7,6 +7,7 @@ import { configuration } from './config/config';
 import { DatabaseConfig } from './config/database.config';
 import { PostModule } from './post/post.module';
 import { ProfileModule } from './Profile/profile.module';
+import { EmpresaModule } from './empresa/empresa.module';
 
 // import { TestModule } from './test/test.module';
 import { UserModule } from './user/user.module';
@@ -28,6 +29,7 @@ const ENV = process.env.NODE_ENV;
     AuthModule,
     CommentModule,
     ProfileModule,
+    EmpresaModule,
   ],
   controllers: [],
   providers: [],
