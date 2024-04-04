@@ -5,7 +5,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  ManyToOne,
+  // ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -21,6 +21,12 @@ export class ProfileEntity {
 
   @Column()
   About: number;
+
+  @Column()
+  phone: number;
+
+  @Column()
+  details: string;
 
   @OneToOne(() => User, (user) => user.id)
   userId: number;
