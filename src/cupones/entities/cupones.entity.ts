@@ -5,14 +5,14 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  // ManyToOne,
+  ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('profile')
-export class ProfileEntity {
+@Entity('cupones')
+export class CuponesEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -21,12 +21,6 @@ export class ProfileEntity {
 
   @Column()
   About: number;
-
-  @Column()
-  phone: number;
-
-  @Column()
-  details: string;
 
   @OneToOne(() => User, (user) => user.id)
   userId: number;
